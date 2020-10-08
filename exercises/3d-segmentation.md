@@ -20,7 +20,12 @@ for a single image plane.
 ![labels](https://user-images.githubusercontent.com/4263537/94693568-2cd0db80-0334-11eb-8053-709d0cfbdef1.png)
 ![boundaries](https://user-images.githubusercontent.com/4263537/94693573-2e9a9f00-0334-11eb-97f1-7056506cbc38.png)
 
+The goal of this exercise is to implement a 3d U-Net that learns to segment boundaries and work on
+post-processing to obtain a segmentation from the network results.
+
+
 ## Exercise
+
 - Write labels to boundaries (`LabelToBoundary`) transformation in order to recover the target labels for the semantic segmentation task.
 Use [find_boundaries function](https://scikit-image.org/docs/dev/api/skimage.segmentation.html#skimage.segmentation.find_boundaries))
 - Implement `OvuleDataset` class which returns randomly sampled patches of a given size from the dataset, e.g.: 
@@ -62,6 +67,3 @@ layers before each convolutional layer in order to speed up the training converg
 What is the problem with this simple approach?
 - Using the network trained on the training set, predict the cell boundaries on the test set of the Ovules dataset. Visualize the results
 e.g. show the a couple of z-slices of the input image and predicted boundaries and the target boundaries.
-
-
-
